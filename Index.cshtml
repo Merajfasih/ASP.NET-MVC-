@@ -1,0 +1,78 @@
+﻿@using HTMLhelper.Models
+@model Employe
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @helper Mylisthelper(string[] str)
+        {
+            if (str.Length == 0)
+            {
+                <label>No data Exist</label>
+            }
+            else
+            {
+                <ul>
+                    @foreach (var item in str)
+                    {
+                        <li>@item</li>
+                    }
+                </ul>
+            }
+        }
+    </div>
+    <div>
+        <label>My Example 1 - Name List</label>
+        <div>
+            @Mylisthelper(new string[] { "Ali", "Meraj", "Aslam" })
+        </div>
+    </div>
+    <div>
+        <label>My Example 1 - Programming Language</label>
+        <div>
+            @Mylisthelper(new string[] { "C#", "JAVA", "PYTHON" })
+        </div>
+    </div>
+    <div>
+        <label>My Example 1 - Programming Language</label>
+        <div>
+            @Mylisthelper(new string[] { })
+        </div>
+    </div>
+    <div>
+        @Html.ActionLink("Click me","About")
+    </div>
+    <div>
+        <label>Contact us page @Html.ActionLink("Contact US","Contact")</label>
+        @Html.TextBox("Textbox","Meraj",new { id = "CustomID"})<br />
+        @Html.Password("MyPasward")
+    </div>
+    <label>Strongly Type Html Helper</label>
+    <div>
+        @using (Html.BeginForm("Myform"))
+        {
+            @Html.TextBoxFor(x => x.name)<br />
+            @Html.TextBoxFor(x => x.address)<br />
+            @Html.CheckBoxFor(x => x.IsEmoloye)
+
+            <input type="submit" value="Press me"/>
+
+        }
+
+    </div>
+    <div>
+        <label>Templated HTML Helpers</label>
+        @Html.ActionLink("Student Page","Studentview")
+    </div>
+    <div>
+        <label>Templated HTML Editor</label>
+        <br />
+        @Html.ActionLink("Editor Link","Edit")
+    </div>
+</body>
+</html>

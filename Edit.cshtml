@@ -1,0 +1,17 @@
+﻿@using HTMLhelper.Models
+@model Student
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div> 
+        @Html.DisplayName("ID") - @Html.Editor("ID")<br />
+        @Html.DisplayNameFor(x=>x.Name) - @Html.EditorFor(x=>x.Name)<br />
+        @Html.DisplayNameFor(x=>x.Dateofbirth) - @Html.EditorFor(x=>x.Dateofbirth)
+    </div>
+</body>
+</html>

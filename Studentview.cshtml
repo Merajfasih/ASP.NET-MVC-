@@ -1,0 +1,38 @@
+﻿@using HTMLhelper.Models
+@model Student
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Studentview</title>
+</head>
+<body>
+    <div>
+        <label>Templated HTML Helpers</label><br />
+        @Html.DisplayName("Name")<br />
+        @Html.DisplayNameFor(x=>x.Name)<br />
+        @Html.DisplayNameFor(x=>x.Dateofbirth)<br />
+        @Html.DisplayText("Name") <br />
+        @Html.DisplayForModel()
+
+    </div>
+    <div>
+        <label>Go BAck To Index PAge @Html.ActionLink("Click Here", "Index")</label>
+    </div>
+    <style>
+        .display-lablel {
+            height: 20px;
+            width: 50%;
+            background-color: Tomato;
+            padding-top: 50px;
+        }
+        .display-field {
+            height: 20px;
+            width: 50%;
+            background-color: powderblue;
+            padding-top: 50px;
+        }
+    </style>
+</body>
+</html>
